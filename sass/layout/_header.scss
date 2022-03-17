@@ -1,0 +1,127 @@
+.header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ececec;
+  @media screen and (min-width: 768px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .container {
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+    @media screen and (min-width: 768px) {
+      align-items: center;
+    }
+  }
+}
+
+.logo-second-word_color_black {
+  color: var(--fourth-text-color);
+}
+
+.header-navigation {
+  @include flex-ai-center();
+  justify-content: space-between;
+}
+
+.header-navigation-list {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-left: 88px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: 93px;
+  }
+}
+
+.header-navigation-list__item {
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.header-navigation-list__link {
+  position: relative;
+  display: block;
+
+  @include font(14px, 1.14, 500, 0.02em);
+  color: var(--nav-menu-text-color);
+
+  transition: color var(--duration) var(--timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+.header-contact-list {
+  display: none;
+  margin-left: auto;
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: block;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+  }
+}
+
+.header-contact-list__item {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+}
+
+.header-contact-list__link {
+  @include flex-ai-center();
+  @include font(12px, 1.17, 500, 0.02em);
+  color: inherit;
+
+  transition: color var(--duration) var(--timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include font(14px, 1.14, 500, 0.02em);
+  }
+}
+
+.header-contact-list__icon {
+  margin-right: 8px;
+
+  fill: currentColor;
+  @media screen and (min-width: 1200px) {
+    margin-right: 10px;
+  }
+}
+
+.header-navigation-list__link_active {
+  &::after {
+    @include position-absolute-lb(0, -1px);
+    display: block;
+    content: '';
+    width: 100%;
+    height: 4px;
+
+    background-color: var(--accent-color);
+    border-radius: 2px;
+  }
+}

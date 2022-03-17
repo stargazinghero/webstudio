@@ -1,0 +1,128 @@
+.form-data__title {
+  display: block;
+  margin-bottom: 12px;
+
+  @include font(20px, 1.15, 700);
+  text-align: center;
+  color: var(--title-text-color);
+}
+
+.form-data__field {
+  margin-bottom: 10px;
+}
+
+.form-data__label {
+  display: block;
+  margin-bottom: 4px;
+
+  @include font(12px, 1.17, 400, 0.01em);
+  color: var(--primary-text-color);
+}
+
+.form-data__input-wrapper {
+  display: block;
+  position: relative;
+}
+
+.form-data__input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+
+  border: 1px solid var(--modal-border-input-color);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+
+  transition: border var(--duration) var(--timing-function);
+  &:focus {
+    border: 1px solid var(--accent-color);
+  }
+}
+
+.form-data__input-icon {
+  @include position-absolute-lt(15px, 50%);
+  transform: translateY(-50%);
+
+  transition: fill var(--duration) var(--timing-function);
+  .form-data__input:focus + & {
+    fill: var(--accent-color);
+  }
+}
+
+.form-data__field_comment {
+  margin-bottom: 20px;
+}
+
+.form-data__comment {
+  width: 100%;
+  height: 120px;
+  padding-left: 16px;
+  padding-top: 12px;
+
+  resize: none;
+  border: 1px solid var(--modal-border-input-color);
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+
+  transition: border var(--duration) var(--timing-function);
+  &:focus {
+    border: 1px solid var(--accent-color);
+  }
+  &::placeholder {
+    @include font(12px, 1.17, 400, 0.01em);
+    color: var(--modal-form-placeholder-color);
+  }
+}
+
+.form-data__field_check {
+  margin-bottom: 30px;
+}
+
+.form-data__checkbox-label {
+  @include flex-ai-center();
+  @include font(8px, 1.2);
+  color: var(--primary-text-color);
+  &::before {
+    content: '';
+    width: 16px;
+    height: 15px;
+    margin-right: 8.38px;
+
+    border: 2px solid var(--modal-border-checkbox-color);
+    border-radius: 2px;
+    cursor: pointer;
+
+    transition: border-color var(--duration) var(--timing-function);
+    .form-data__checkbox:checked + & {
+      background-color: var(--accent-color);
+      background-image: url('../images/icons/check.svg');
+      @include background(contain);
+      border: none;
+    }
+    .form-data__checkbox:focus + & {
+      border-color: var(--accent-color);
+    }
+  }
+  @media screen and (min-width: 480px) {
+    @include font(12px, 1.71);
+  }
+  @media screen and (min-width: 1200px) {
+    @include font(14px, 1.71);
+  }
+}
+
+.form-data__checkbox-text {
+  display: block;
+  margin-right: 5px;
+}
+
+.form-data__checkbox-link {
+  color: var(--accent-color);
+}
+
+.form-data__button {
+  display: block;
+  @include margin-vert-center();
+}

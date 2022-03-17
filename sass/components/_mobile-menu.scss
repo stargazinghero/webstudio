@@ -1,0 +1,124 @@
+.menu-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+
+  background-color: var(--main-bg-color);
+  transform: translateX(-200%);
+  transition: transform var(--duration) var(--timing-function);
+  &.is-open {
+    transform: translateX(0%);
+  }
+}
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+
+  &.js-open-menu {
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+  &.js-close-menu {
+    margin-left: auto;
+  }
+
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
+}
+
+.menu-container {
+  padding-left: 40px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 48px;
+}
+.mobile-navigation-list__item {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.mobile-navigation-list__link {
+  @include font(40px, 1.17, 500, 0.02em);
+  color: var(--nav-menu-text-color);
+
+  transition: color var(--duration) var(--timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.mobile-navigation-list {
+  margin-bottom: 302px;
+}
+
+.mobile-contact-list {
+  margin-bottom: 64px;
+}
+
+.mobile-contact-list__item {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.mobile-contact-list__link {
+  color: var(--primary-text-color);
+  &.mobile-contact-list__tel {
+    @include font(28px, 1.18, 500, 0.02em);
+    @media screen and (min-width: 480px) {
+      @include font(34px, 1.22, 500, 0.02em);
+    }
+  }
+  &.mobile-contact-list__email {
+    @include font(24px, 1.17, 500, 0.02em);
+  }
+  transition: color var(--duration) var(--timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.mobile-social-list {
+  display: flex;
+}
+
+.mobile-social-list__item {
+  display: flex;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  padding-right: 10px;
+  &:last-child {
+    border-right: 0;
+  }
+}
+
+.mobile-social-list__link {
+  color: var(--accent-color);
+  @include font(12px, 1.22, 500, 0.02em);
+  @media screen and (min-width: 480px) {
+    @include font(18px, 1.22, 500, 0.02em);
+  }
+}

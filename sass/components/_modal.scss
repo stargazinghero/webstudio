@@ -1,0 +1,44 @@
+.modal {
+  @include translate-center;
+  width: 300px;
+  min-height: 381px;
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+
+  background-color: var(--modal-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  @media screen and (min-width: 480px) and (max-width: 1199px) {
+    width: 450px;
+    min-height: 609px;
+    padding: 40px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    min-height: 581px;
+    padding: 40px;
+  }
+}
+
+.button-close {
+  @include position-absolute-rt(8px, 8px);
+  @include flex-center();
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: unset;
+  border-radius: 50%;
+}
+
+.button-close__icon {
+  transition: fill var(--duration) var(--timing-function);
+  .button-close:hover &,
+  .button-close:focus & {
+    fill: var(--accent-color);
+  }
+}
